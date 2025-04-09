@@ -98,6 +98,15 @@
 <!--            </plugin>-->
 <!--        </plugins>-->
 <!--    </build>-->
+    <build>
+        <plugins>
+            <!-- SpringBoot打包插件 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
     <profiles>
         <profile>
             <id>test</id>
