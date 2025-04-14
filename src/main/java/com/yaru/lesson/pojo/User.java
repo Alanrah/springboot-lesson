@@ -3,7 +3,8 @@ package com.yaru.lesson.pojo;
 
 import jakarta.persistence.*;
 
-// 把 User 类映射为数据库的一个表
+// 可参考文章  https://cloud.tencent.com/developer/article/2387749
+// 把 User 类映射为数据库的一个表，Hibernate 实体映射
 @Table(name="lesson_user")
 @Entity
 public class User {
@@ -54,7 +55,11 @@ public class User {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "User{" +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", mobile='" + mobile + '\'' +
+                '}';
     }
-
 }
