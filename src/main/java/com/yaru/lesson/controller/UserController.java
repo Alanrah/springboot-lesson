@@ -4,6 +4,7 @@ import com.yaru.lesson.pojo.ResponseMessage;
 import com.yaru.lesson.pojo.User;
 import com.yaru.lesson.pojo.dto.UserDto;
 import com.yaru.lesson.service.IUserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +21,7 @@ public class UserController {
 
     // create
     @PostMapping // method: post
-    public ResponseMessage<User> add(@RequestBody UserDto user) {  // RequestBody 会自动将传入的json文本转换为对象
+    public ResponseMessage<User> add(@Valid @RequestBody UserDto user) {  //  Valid 触发dto的校验，RequestBody 会自动将传入的json文本转换为对象
         User res =  userService.add(user);
         return ResponseMessage.success(res);
     }
