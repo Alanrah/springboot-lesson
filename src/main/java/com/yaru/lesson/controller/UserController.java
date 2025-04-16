@@ -26,18 +26,19 @@ public class UserController {
         return ResponseMessage.success(res);
     }
 
-
-    // delete
-//    @DeleteMapping
-
-    // update
-//    @PutMapping
-
     // search
     @GetMapping("/{userId}")
-    public ResponseMessage<User> add(@PathVariable Integer userId) {  //  Valid 触发dto的校验，RequestBody 会自动将传入的json文本转换为对象
+    public ResponseMessage<User> getUser(@PathVariable Integer userId) {  //  Valid 触发dto的校验，RequestBody 会自动将传入的json文本转换为对象
         User res =  userService.getUser(userId);
         return ResponseMessage.success(res);
     }
 
+    // update
+    @PutMapping
+    public ResponseMessage<User> edit(@Valid @RequestBody UserDto user) {
+        User res = userService.editUser(user);
+        return ResponseMessage.success(res);
+    }
+    // delete
+//    @DeleteMapping
 }

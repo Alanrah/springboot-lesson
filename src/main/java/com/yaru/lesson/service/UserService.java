@@ -26,4 +26,11 @@ public class UserService implements IUserService {
         // user有可能不存在，需要处理异常
         return userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("用户不存在，参数异常"));
     }
+
+    @Override
+    public User editUser(UserDto user) {
+        User userPojo = new User();
+        BeanUtils.copyProperties(user, userPojo);
+        return userRepository.save(userPojo);
+    }
 }

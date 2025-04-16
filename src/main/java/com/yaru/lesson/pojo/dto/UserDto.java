@@ -8,6 +8,7 @@ import org.hibernate.validator.constraints.Length;
 // DTO用于在不同层之间传输数据
 // 通常用于将业务逻辑层（Service层）的数据传输给表示层（Presentation层）或持久化层（Persistence层）
 public class UserDto {
+    private Integer userId;
     // 依赖于 spring-boot-starter-validation
      @NotBlank(message = "用户名不能为空") // 去除空格
      @NotEmpty
@@ -17,6 +18,14 @@ public class UserDto {
     private String password;
     @Pattern(regexp = "^1[3-9]\\d{9}$", message = "手机号格式不正确")
     private String mobile;
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 
     public String getUserName() {
         return userName;
