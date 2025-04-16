@@ -1,5 +1,5 @@
 # Getting Started
-
+课程在B站的视频地址：https://www.bilibili.com/video/BV1fmvkeeEth/?spm_id_from=333.337.search-card.all.click&vd_source=8b689c36e63fd8d164ffd129e4a8d603
 ### Reference Documentation
 For further reference, please consider the following sections:
 

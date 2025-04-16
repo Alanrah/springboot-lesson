@@ -40,5 +40,9 @@ public class UserController {
         return ResponseMessage.success(res);
     }
     // delete
-//    @DeleteMapping
+    @DeleteMapping("/{userId}")
+    public ResponseMessage<String> del(@PathVariable Integer userId) {
+        userService.delUser(userId);
+        return ResponseMessage.success("删除成功");
+    }
 }
