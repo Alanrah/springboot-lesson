@@ -8,9 +8,9 @@ public class ResponseMessage<T> {
     private T data;         // 泛型数据载体
 
 
-    // 无参构造器（框架/反射需要）
-    public ResponseMessage() {
-    }
+//    // 无参构造器（框架/反射需要）
+//    public ResponseMessage() {
+//    }
 
     // 全参构造器（快速创建对象）
     public ResponseMessage(int code, String message, T data) {
