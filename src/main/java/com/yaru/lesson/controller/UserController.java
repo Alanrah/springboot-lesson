@@ -34,6 +34,10 @@ public class UserController {
 //    @PutMapping
 
     // search
-//    @GetMapping
+    @GetMapping("/{userId}")
+    public ResponseMessage<User> add(@PathVariable Integer userId) {  //  Valid 触发dto的校验，RequestBody 会自动将传入的json文本转换为对象
+        User res =  userService.getUser(userId);
+        return ResponseMessage.success(res);
+    }
 
 }

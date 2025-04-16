@@ -20,4 +20,10 @@ public class UserService implements IUserService {
         BeanUtils.copyProperties(user, userPojo);
         return userRepository.save(userPojo);
     }
+
+    @Override
+    public User getUser(Integer userId) {
+        // user有可能不存在，需要处理异常
+        return userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("用户不存在，参数异常"));
+    }
 }
